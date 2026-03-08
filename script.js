@@ -15,7 +15,7 @@ function getvalue(btn){
 }
 // delete
 const del = document.querySelector(".delete");
-del.addEventListener("click", function () {format.pop(0); showvalues();});
+del.addEventListener("click", function () {format.pop(); showvalues();});
 //dot
 const dotbutton = document.querySelector(".dot");
 dotbutton.addEventListener("click", function () {
@@ -45,10 +45,14 @@ function count(a, b, o){
 // operators
 const operators = document.querySelectorAll(".operation");
 function operation(button){
-    numbers.push(format.join(''));
-    numbers.push(button.target.id.replace("n", ""));
+    if (numbers.length === 2) {
+        numbers.pop();
+    }
+    else {
+        numbers.push(format.join(''));  
+    }
+    numbers.push(button.target.id.replace("n", "")); 
     format.length = 0;
-    console.log(numbers, format)
 }
 for (let a of operators){
     a.addEventListener("click", operation);
@@ -57,6 +61,7 @@ for (let a of operators){
 //equals
 function final(){
     numbers.push(format.join(''));
+    console.log("Final numbers" + numbers);
     let num = count(numbers[0], numbers[2], numbers[1]);
     reset();
     format.push(num);

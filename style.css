@@ -1,14 +1,21 @@
+:root{
+    --main: #669bbc;
+    --background: #fdf0d5;
+    --accent:#c1121f;
+    --dark:#003049;
+    --dark2:#780000;
+}
 body {
     display: flex;
     justify-content: center;
-    background-color: bisque;
+    background-color: var(--background);
     align-items: center;
     min-height: 100vh;
 }
 main {
     padding: 30px;
     border-radius: 15px;
-    background-color:chocolate;
+    background-color:var(--dark);
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -18,27 +25,25 @@ main {
 
 .row {
     display: flex;
+    gap: 0.5rem;
 }
-
-
-
-
 
 button {
     padding: 15px;
+    border-radius: 15px;
     border: 0.2px solid black;
     transition: all 1s ease-in-out;
     font-size: 20px;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 button:hover {
     opacity: 0.8;
-}
-.minus{
-    flex: 0.5;
+    transform: translateY(-4px);
 }
 .dot {
-    flex: 0.5;
+    flex: 1;
+    color: var(--background);
+    background-color: var(--accent);
 }
 .display {
     flex:3;
@@ -48,18 +53,27 @@ button:hover {
     font-size: 20px;
 }
 .number{
-    background-color: blanchedalmond;
+    background-color: var(--background);
     flex: 1;
 }
 .operation {
-    background-color:cadetblue;
+    background-color:var(--dark2);
     flex: 1;
+    color:var(--background)
 }
 .c{
-    background-color: red;
+    background-color: var(--accent);
     flex:1;
+    color:var(--background)
+
 }
 .equal {
-    background-color: red;
+    background-color: var(--accent);
     flex: 1;
+    color:var(--background)
+}
+.delete {
+    flex: 1;
+    color: var(--background);
+    background-color: var(--accent);
 }
