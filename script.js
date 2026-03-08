@@ -1,6 +1,6 @@
 // Get values
 let format = [];
-let numbers = [0, "+"];
+let numbers = [];
 let minus = false;
 let second = true;
 let dot = false;

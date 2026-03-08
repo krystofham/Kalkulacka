@@ -2,16 +2,18 @@ body {
     display: flex;
     justify-content: center;
     background-color: bisque;
+    align-items: center;
+    min-height: 100vh;
 }
 main {
     padding: 30px;
     border-radius: 15px;
-    background-color: aqua;
+    background-color:chocolate;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 60%;
-    height: 80%;
+    min-width: 300px;
+    max-width: 500px;
 }
 
 .row {
@@ -28,9 +30,7 @@ button {
     transition: all 1s ease-in-out;
     font-size: 20px;
 }
-button:hover{
-    flex: 2;
-}
+
 .minus{
     flex: 0.5;
 }
@@ -41,6 +41,8 @@ button:hover{
     flex:3;
     background-color: green;
     padding: 25px;
+    border: 10px solid rgba(0, 0, 0, 0.8);
+    font-size: 20px;
 }
 .number{
     background-color: blanchedalmond;
