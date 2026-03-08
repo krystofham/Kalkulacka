@@ -1,7 +1,7 @@
-🧮 Modern JS Calculator
+# 🧮 Modern JS Calculator
 
 Jednoduchá, ale výkonná webová kalkulačka postavená na čistém JavaScriptu, HTML5 a CSS3. Podporuje základní aritmetické operace, ovládání klávesnicí a má responzivní design.
-🚀 Funkce
+## 🚀 Funkce
 
     Základní operace: Sčítání, odčítání, násobení a dělení.
 
@@ -13,7 +13,7 @@ Jednoduchá, ale výkonná webová kalkulačka postavená na čistém JavaScript
 
     Responzivita: Moderní tmavý vzhled, který se přizpůsobí velikosti obrazovky.
 
-⌨️ Ovládání klávesnicí
+## ⌨️ Ovládání klávesnicí
 
 Kalkulačku můžete ovládat přímo z vaší klávesnice:
 Klávesa	Akce
@@ -33,7 +33,7 @@ Kód je rozdělen do logických bloků pro snadnou údržbu:
 
     Keyboard Mapping: Event listener na window, který mapuje fyzické klávesy na existující funkce kalkulačky pomocí simulovaných objektů.
 
-🎨 Vzhled (CSS)
+## 🎨 Vzhled (CSS)
 
 Projekt používá moderní CSS proměnné (:root) pro snadnou úpravu barevného schématu:
 
@@ -43,7 +43,7 @@ Projekt používá moderní CSS proměnné (:root) pro snadnou úpravu barevnéh
 
     --background: Světlé pozadí stránky.
 
-📝 Instalace
+## 📝 Instalace
 
     Stáhněte si soubory index.html, style.css a script.js.
 
