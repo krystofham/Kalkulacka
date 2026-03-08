@@ -2,6 +2,7 @@
 let format = [];
 let numbers = [0, "+"];
 let minus = false;
+let second = true;
 let dot = false;
 const btn = document.querySelectorAll(".number");
 for (let a=0; a < 10; a++){
@@ -12,10 +13,7 @@ function getvalue(btn){
     const control = btn.target;
     let number = parseInt(control.id.replace("n", ""));
     format.push(number);
-    
-
     showvalues();
-    final()
 }
 //minus
 const minusbutton = document.querySelector(".minus");
@@ -31,10 +29,13 @@ function showvalues(){
 }
 
 // Count
+const equal = document.querySelector(".equal");
+equal.addEventListener("click", final)
+
 function count(a, b, o){
     switch (o){
-        case `+`: return parseFloat(a)+parseFloat(b).toFixed(2); break;
-        case `-`: return parseFloat(a)-parseFloat(b).toFixed(2); break;
+        case `+`: return (parseFloat(a)+parseFloat(b)).toFixed(2); break;
+        case `-`: return (parseFloat(a)-parseFloat(b)).toFixed(2); break;
         case `*`: return (parseFloat(a)*parseFloat(b)).toFixed(2); break;
         case `/`: return (parseFloat(a)/parseFloat(b)).toFixed(2); break;
     }
@@ -65,15 +66,14 @@ function final(){
     let num = count(numbers[0], numbers[2], numbers[1]);
     reset();
     format.push(num);
-    console.log(numbers, format)
-    showvalues() 
+    console.log(numbers, format, num)
+    showvalues()
 }
 // C
 const c = document.querySelector(".c");
 c.addEventListener("click",  reset)
 function reset(){
     numbers.length = 0
-    numbers = [0, "+"];
     format.length = 0
     showvalues();
 }
