@@ -47,6 +47,7 @@ button:hover {
 }
 .display {
     flex:3;
+    text-align: right;
     background-color: green;
     padding: 25px;
     border: 10px solid rgba(0, 0, 0, 0.8);

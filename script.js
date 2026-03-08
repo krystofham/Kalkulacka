@@ -13,6 +13,26 @@ function getvalue(btn){
     format.push(number);
     showvalues();
 }
+// Get values from keyboard
+window.addEventListener("keydown", function(e) {
+    if (e.key >= "0" && e.key <= "9") {
+        getvalue({ target: { id: `n${e.key}` } });
+    }
+    else if (["+", "-", "*", "/"].includes(e.key)) {
+        operation({ target: { id: `n${e.key}` } });
+    }
+    else if (e.key === "Enter" || e.key === "=") {
+        e.preventDefault(); 
+        final();
+    }
+    else if (e.key.toLowerCase() === "c" || e.key === "Escape") {
+        reset();
+    }
+    else if (e.key === "Backspace") {
+        format.pop();
+        showvalues();
+    }
+});
 // delete
 const del = document.querySelector(".delete");
 del.addEventListener("click", function () {format.pop(); showvalues();});
