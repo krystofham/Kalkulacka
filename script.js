@@ -2,29 +2,44 @@
 let format = [];
 let second = false;
 let numbers = [];
+let minus = false;
 const btn = document.querySelectorAll(".number");
-for (let a=0; a < 9; a++){
+for (let a=0; a < 10; a++){
     btn[a].addEventListener("click", getvalue)
 }
 
 function getvalue(btn){
     const control = btn.target;
-    const number = parseInt(control.id.replace("n", ""));
+    let number = parseInt(control.id.replace("n", ""));
+    if (minus) {
+        number*=-1;
+    }
     format.push(number);
+    minus = false;
+
     showvalues();
+    if (second){
+        final()
+    }
 }
+//minus
+const minusbutton = document.querySelector(".minus");
+minusbutton.addEventListener("click", function () {minus = true});
+//dot
+
 // Print values
 function showvalues(){
     const display = document.querySelector(".display");
     display.textContent = format.join('');
 }
+
 // Count
 function count(a, b, o){
     switch (o){
-        case `+`: return parseInt(a)+parseInt(b); break;
-        case `-`: return parseInt(a)-parseInt(b); break;
-        case `*`: return parseInt(a)*parseInt(b); break;
-        case `/`: return parseInt(a)/parseInt(b); break;
+        case `+`: return parseFloat(a)+parseFloat(b); break;
+        case `-`: return parseFloat(a)-parseFloat(b); break;
+        case `*`: return (parseFloat(a)*parseFloat(b)).toFixed(2); break;
+        case `/`: return (parseFloat(a)/parseFloat(b)).toFixed(2); break;
     }
 }
 // operators
@@ -34,24 +49,20 @@ function operation(button){
     numbers.push(button.target.id.replace("n", ""));
     format.length = 0;
     second = true;
+    console.log(numbers, format)
 }
 for (let a of operators){
     a.addEventListener("click", operation);
 }
 
 //equals
-const equal = document.querySelector(".equal");
-equal.addEventListener("click", final)
 function final(){
     numbers.push(format.join(''));
     let num = count(numbers[0], numbers[2], numbers[1]);
-    numbers.length = 0
-
-    numbers.push(num);
-    format.length = 0
-
-    format.push(num)
-    second = false
+    reset();
+    format.push(num);
+    second = true;
+    console.log(numbers, format)
     showvalues() 
 }
 // C
