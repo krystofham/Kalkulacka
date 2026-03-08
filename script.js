@@ -3,7 +3,6 @@ let format = [];
 let numbers = [];
 let minus = false;
 let second = true;
-let dot = false;
 const btn = document.querySelectorAll(".number");
 for (let a=0; a < 10; a++){
     btn[a].addEventListener("click", getvalue)
@@ -20,8 +19,13 @@ const minusbutton = document.querySelector(".minus");
 minusbutton.addEventListener("click", function () {minus = true});
 //dot
 const dotbutton = document.querySelector(".dot");
-dotbutton.addEventListener("click", function () {dot = true});
-
+// V dotbutton event listeneru to změň na:
+dotbutton.addEventListener("click", function () {
+    if (!format.includes(".")) { 
+        format.push(".");
+        showvalues();
+    }
+});
 // Print values
 function showvalues(){
     const display = document.querySelector(".display");
@@ -59,9 +63,6 @@ function final(){
         numbers[2]*=-1;
     }
     minus = false;
-    if (dot) {
-        numbers[2]*=0.1;
-    }
     dot = false;
     let num = count(numbers[0], numbers[2], numbers[1]);
     reset();
