@@ -44,3 +44,7 @@ button {
     flex: 1;
     min-width: 100px;
 }
+.equal {
+    min-width: 100px;
+    background-color: red;
+}
