@@ -1,6 +1,3 @@
-Dobrá práce! Tvůj projekt už má všechno: funkční logiku, stylové UI a ovládání klávesnicí. K takovému kódu se skvěle hodí přehledný README.md soubor, který vysvětlí, jak tvá kalkulačka funguje a co všechno umí.
-
-Tady je návrh profesionálního README, který můžeš rovnou nahrát na GitHub:
 🧮 Modern JS Calculator
 
 Jednoduchá, ale výkonná webová kalkulačka postavená na čistém JavaScriptu, HTML5 a CSS3. Podporuje základní aritmetické operace, ovládání klávesnicí a má responzivní design.
