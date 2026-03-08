@@ -29,8 +29,11 @@ button {
     border: 0.2px solid black;
     transition: all 1s ease-in-out;
     font-size: 20px;
+    transition: all 0.1s ease;
 }
-
+button:hover {
+    opacity: 0.8;
+}
 .minus{
     flex: 0.5;
 }

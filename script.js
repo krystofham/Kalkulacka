@@ -1,7 +1,6 @@
 // Get values
 let format = [];
 let numbers = [];
-let minus = false;
 let second = true;
 const btn = document.querySelectorAll(".number");
 for (let a=0; a < 10; a++){
@@ -14,12 +13,11 @@ function getvalue(btn){
     format.push(number);
     showvalues();
 }
-//minus
-const minusbutton = document.querySelector(".minus");
-minusbutton.addEventListener("click", function () {minus = true});
+// delete
+const del = document.querySelector(".delete");
+del.addEventListener("click", function () {format.pop(0); showvalues();});
 //dot
 const dotbutton = document.querySelector(".dot");
-// V dotbutton event listeneru to změň na:
 dotbutton.addEventListener("click", function () {
     if (!format.includes(".")) { 
         format.push(".");
@@ -38,10 +36,10 @@ equal.addEventListener("click", final)
 
 function count(a, b, o){
     switch (o){
-        case `+`: return (parseFloat(a)+parseFloat(b)).toFixed(2); break;
-        case `-`: return (parseFloat(a)-parseFloat(b)).toFixed(2); break;
-        case `*`: return (parseFloat(a)*parseFloat(b)).toFixed(2); break;
-        case `/`: return (parseFloat(a)/parseFloat(b)).toFixed(2); break;
+        case `+`: return parseFloat((parseFloat(a)+parseFloat(b)).toFixed(4)); break;
+        case `-`: return parseFloat((parseFloat(a)-parseFloat(b)).toFixed(4)); break;
+        case `*`: return parseFloat((parseFloat(a)*parseFloat(b)).toFixed(4)); break;
+        case `/`: return parseFloat((parseFloat(a)/parseFloat(b)).toFixed(4)); break;
     }
 }
 // operators
@@ -59,11 +57,6 @@ for (let a of operators){
 //equals
 function final(){
     numbers.push(format.join(''));
-    if (minus) {
-        numbers[2]*=-1;
-    }
-    minus = false;
-    dot = false;
     let num = count(numbers[0], numbers[2], numbers[1]);
     reset();
     format.push(num);
