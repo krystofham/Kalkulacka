@@ -50,3 +50,4 @@ Projekt používá moderní CSS proměnné (:root) pro snadnou úpravu barevnéh
     Otevřete index.html v jakémkoliv moderním prohlížeči.
 
     Počítejte!
+Projekt byl vytvořen v rámci The Odin Project
